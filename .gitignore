@@ -1,0 +1,11 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+local.settings.json
+.azure/
+.DS_Store
+.idea/
+.vscode/
+*.log
+node_modules/

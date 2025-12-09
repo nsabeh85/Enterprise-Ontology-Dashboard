@@ -1,0 +1,166 @@
+{
+  "wau": 165,
+  "mau": 306,
+  "stickiness": 53.9,
+  "totalQueries": 8627,
+  "totalUsers": 834,
+  "queriesPerUser": 10.3,
+  "avgResponseTimeMs": 7258.0,
+  "peakHour": 10,
+  "queryTrend": [
+    {
+      "date": "2025-11-10",
+      "count": 97
+    },
+    {
+      "date": "2025-11-11",
+      "count": 48
+    },
+    {
+      "date": "2025-11-12",
+      "count": 73
+    },
+    {
+      "date": "2025-11-13",
+      "count": 105
+    },
+    {
+      "date": "2025-11-14",
+      "count": 74
+    },
+    {
+      "date": "2025-11-15",
+      "count": 1
+    },
+    {
+      "date": "2025-11-17",
+      "count": 31
+    },
+    {
+      "date": "2025-11-18",
+      "count": 78
+    },
+    {
+      "date": "2025-11-19",
+      "count": 49
+    },
+    {
+      "date": "2025-11-20",
+      "count": 49
+    },
+    {
+      "date": "2025-11-21",
+      "count": 16
+    },
+    {
+      "date": "2025-11-23",
+      "count": 5
+    },
+    {
+      "date": "2025-11-24",
+      "count": 41
+    },
+    {
+      "date": "2025-11-25",
+      "count": 120
+    },
+    {
+      "date": "2025-11-26",
+      "count": 86
+    },
+    {
+      "date": "2025-11-27",
+      "count": 45
+    },
+    {
+      "date": "2025-11-28",
+      "count": 44
+    },
+    {
+      "date": "2025-11-29",
+      "count": 1
+    },
+    {
+      "date": "2025-11-30",
+      "count": 6
+    },
+    {
+      "date": "2025-12-01",
+      "count": 65
+    },
+    {
+      "date": "2025-12-02",
+      "count": 233
+    },
+    {
+      "date": "2025-12-03",
+      "count": 160
+    },
+    {
+      "date": "2025-12-04",
+      "count": 123
+    },
+    {
+      "date": "2025-12-05",
+      "count": 140
+    },
+    {
+      "date": "2025-12-07",
+      "count": 13
+    },
+    {
+      "date": "2025-12-08",
+      "count": 99
+    },
+    {
+      "date": "2025-12-09",
+      "count": 35
+    }
+  ],
+  "topUsers": [
+    {
+      "user": "anonymou...",
+      "queries": 1802
+    },
+    {
+      "user": "ae6d6f5a...",
+      "queries": 192
+    },
+    {
+      "user": "7d6e7747...",
+      "queries": 189
+    },
+    {
+      "user": "29:1AjNA...",
+      "queries": 177
+    },
+    {
+      "user": "3a92be97...",
+      "queries": 148
+    },
+    {
+      "user": "gating_f...",
+      "queries": 137
+    },
+    {
+      "user": "authenti...",
+      "queries": 134
+    },
+    {
+      "user": "ac32811a...",
+      "queries": 118
+    },
+    {
+      "user": "a6a9a2bc...",
+      "queries": 105
+    },
+    {
+      "user": "footloos...",
+      "queries": 97
+    }
+  ],
+  "metadata": {
+    "generatedAt": "2025-12-09T10:45:31.150124",
+    "dataSource": "production"
+  }
+}
