@@ -1,0 +1,997 @@
+{
+  "summary": {
+    "total": 192,
+    "thumbsUp": 118,
+    "thumbsDown": 74,
+    "positiveRate": 61.5
+  },
+  "trend": [
+    {
+      "date": "2025-11-11",
+      "positive": 1,
+      "negative": 0
+    },
+    {
+      "date": "2025-11-20",
+      "positive": 1,
+      "negative": 0
+    },
+    {
+      "date": "2025-11-26",
+      "positive": 3,
+      "negative": 2
+    },
+    {
+      "date": "2025-11-28",
+      "positive": 1,
+      "negative": 0
+    },
+    {
+      "date": "2025-12-02",
+      "positive": 2,
+      "negative": 4
+    },
+    {
+      "date": "2025-12-03",
+      "positive": 1,
+      "negative": 0
+    },
+    {
+      "date": "2025-12-04",
+      "positive": 1,
+      "negative": 1
+    },
+    {
+      "date": "2025-12-05",
+      "positive": 0,
+      "negative": 2
+    },
+    {
+      "date": "2025-12-08",
+      "positive": 0,
+      "negative": 1
+    },
+    {
+      "date": "2025-12-10",
+      "positive": 6,
+      "negative": 2
+    }
+  ],
+  "categoryBreakdown": [
+    {
+      "category": "Other",
+      "count": 101
+    },
+    {
+      "category": "Facilities",
+      "count": 28
+    },
+    {
+      "category": "Out-of-Scope",
+      "count": 21
+    },
+    {
+      "category": "General Info",
+      "count": 16
+    },
+    {
+      "category": "Capacity",
+      "count": 12
+    },
+    {
+      "category": "Connectivity",
+      "count": 10
+    },
+    {
+      "category": "ServiceFabric",
+      "count": 4
+    }
+  ],
+  "feedbackItems": [
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-12-10T15:31:10.820836Z",
+      "userName": "Aaron Salsman",
+      "feedbackType": "thumbsUp",
+      "comment": "a lot of info. not sure if its right since I am only testing the feedback and I am not going to read all of its response.",
+      "category": "Other",
+      "conversationId": "549acc8e-b23"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-12-10T15:29:58.828827Z",
+      "userName": "Chris Hunsaker",
+      "feedbackType": "thumbsDown",
+      "comment": "Asking for largest datacenter by total megawatts, didn't know how to answer the question.",
+      "category": "Capacity",
+      "conversationId": "8562d85a-72c"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-12-10T15:29:28.718414Z",
+      "userName": "Aaron Salsman",
+      "feedbackType": "thumbsUp",
+      "comment": "responded and had the thumbs",
+      "category": "Other",
+      "conversationId": "14c73ed0-79b"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-12-10T15:28:46.257376Z",
+      "userName": "Chris Hunsaker",
+      "feedbackType": "thumbsUp",
+      "comment": "This was a helpful response.",
+      "category": "Other",
+      "conversationId": "efc373e2-27c"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-12-10T15:27:45.144440Z",
+      "userName": "Melonie Poole",
+      "feedbackType": "thumbsDown",
+      "comment": "Boo!",
+      "category": "Out-of-Scope",
+      "conversationId": "677c9292-3b2"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-12-10T15:27:30.369840Z",
+      "userName": "Aaron Salsman",
+      "feedbackType": "thumbsUp",
+      "comment": "sounds helpful",
+      "category": "Other",
+      "conversationId": "902fb3e7-ccd"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-12-10T13:28:41.799035Z",
+      "userName": "Seydina Niang",
+      "feedbackType": "thumbsUp",
+      "comment": "",
+      "category": "Other",
+      "conversationId": "fa333c77-8ab"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-12-10T09:23:24.646Z",
+      "userName": "Corine de Goey",
+      "feedbackType": "thumbsUp",
+      "comment": "and 8.30 pm/",
+      "category": "Other",
+      "conversationId": "a:1KD_vAtiSi"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-12-09T00:03:37.310Z",
+      "userName": "Kimberly Karambelas",
+      "feedbackType": "thumbsDown",
+      "comment": "what suite should I put the client in in PHX15? they need a 44kW cage",
+      "category": "Capacity",
+      "conversationId": "a:1dbHjFJEbs"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-12-06T00:00:21.799074Z",
+      "userName": "Tony Lorino",
+      "feedbackType": "thumbsDown",
+      "comment": "TL - 2025-12-05 @ 6.00p CT - Testing feedback in Prod",
+      "category": "Other",
+      "conversationId": "2be4946e-0bb"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-12-05T10:37:53.815260Z",
+      "userName": "Helen Hall",
+      "feedbackType": "thumbsDown",
+      "comment": "We sold this data centre so it is no longer in the portfolie",
+      "category": "Facilities",
+      "conversationId": "e81e17a4-af1"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-12-04T16:43:43.016Z",
+      "userName": "Kimberly Karambelas",
+      "feedbackType": "thumbsDown",
+      "comment": "FRA18 address",
+      "category": "Facilities",
+      "conversationId": "a:1dbHjFJEbs"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-12-04T06:35:26.907Z",
+      "userName": "Puay Ling Yap",
+      "feedbackType": "thumbsUp",
+      "comment": "yes",
+      "category": "Other",
+      "conversationId": "a:1SWAbXfMvn"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-12-03T16:11:26.787681Z",
+      "userName": "Gareth Pendleton",
+      "feedbackType": "thumbsUp",
+      "comment": "",
+      "category": "Other",
+      "conversationId": "e1df7b81-4ef"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-12-02T19:53:31.377885Z",
+      "userName": "Douglas Nolan",
+      "feedbackType": "thumbsUp",
+      "comment": "",
+      "category": "Other",
+      "conversationId": "1dca18e5-b61"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-12-02T18:51:53.561Z",
+      "userName": "Rick Galietta",
+      "feedbackType": "thumbsUp",
+      "comment": "yes",
+      "category": "Other",
+      "conversationId": "a:1UMknsmXKI"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-12-02T18:38:34.814467Z",
+      "userName": "Paul Herrick",
+      "feedbackType": "thumbsDown",
+      "comment": "May be lacking the details on specifics around local resources by region.  It was not wrong, but not very helpful either.",
+      "category": "Facilities",
+      "conversationId": "e0cbdf9d-eb0"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-12-02T18:23:26.871260Z",
+      "userName": "Joe Nichols",
+      "feedbackType": "thumbsDown",
+      "comment": "incomplete data. product seems to not differentiate between Atlas and CloudConnect, even though these are entirely separate APIs and orchestration engines. They are both available through ServiceFabric, but they need to be distinguished separately in order to be accurate.",
+      "category": "ServiceFabric",
+      "conversationId": "0b3c9e06-347"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-12-02T17:05:49.972516Z",
+      "userName": "Jackie Moran",
+      "feedbackType": "thumbsDown",
+      "comment": "missing data centers.",
+      "category": "Facilities",
+      "conversationId": "9cdd12fd-048"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-12-02T16:04:07.460306Z",
+      "userName": "Zach Ng",
+      "feedbackType": "thumbsDown",
+      "comment": "I asked about one building but it gave me info for a different building",
+      "category": "Facilities",
+      "conversationId": "63afbf84-be4"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-11-28T07:59:04.249Z",
+      "userName": "Frank Peter Routhe",
+      "feedbackType": "thumbsUp",
+      "comment": "describe our power setup in CPH3",
+      "category": "Capacity",
+      "conversationId": "a:1JM1Xoszhs"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-11-26T15:06:06.133891Z",
+      "userName": "Ken Stager",
+      "feedbackType": "thumbsUp",
+      "comment": "Happy now, tony?",
+      "category": "Out-of-Scope",
+      "conversationId": "c8d63c1c-4f2"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-11-26T15:05:34.288692Z",
+      "userName": "Ken Stager",
+      "feedbackType": "thumbsDown",
+      "comment": "",
+      "category": "Other",
+      "conversationId": "c8d63c1c-4f2"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-11-26T15:05:27.396291Z",
+      "userName": "Ken Stager",
+      "feedbackType": "thumbsUp",
+      "comment": "",
+      "category": "Other",
+      "conversationId": "c8d63c1c-4f2"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-11-26T15:05:23.508730Z",
+      "userName": "Ken Stager",
+      "feedbackType": "thumbsDown",
+      "comment": "",
+      "category": "Other",
+      "conversationId": "c8d63c1c-4f2"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-11-26T15:04:27.940654Z",
+      "userName": "Ken Stager",
+      "feedbackType": "thumbsUp",
+      "comment": "",
+      "category": "Other",
+      "conversationId": "c8d63c1c-4f2"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-11-20T18:35:50.447Z",
+      "userName": "Caitlin Speck",
+      "feedbackType": "thumbsUp",
+      "comment": "Yes walk you through the best-fit Digital Realty offering for cross connect or riser fiber in a specific location or help estimate MRR for a particular setup.",
+      "category": "Connectivity",
+      "conversationId": "a:1FRTRGPJI0"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-11-11T23:01:49.343Z",
+      "userName": "Aaron Salsman",
+      "feedbackType": "thumbsUp",
+      "comment": "still here working?",
+      "category": "Other",
+      "conversationId": "a:1PYKAMcSjQ"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-11-07T18:20:49.330Z",
+      "userName": "Anthony Marguccio",
+      "feedbackType": "thumbsUp",
+      "comment": "skip",
+      "category": "Other",
+      "conversationId": "a:1UXUEu8z5k"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-10-30T21:55:14.001961Z",
+      "userName": "Tony Lorino",
+      "feedbackType": "thumbsUp",
+      "comment": "",
+      "category": "Other",
+      "conversationId": "bf3ea5cd-670"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-10-30T15:32:31.042Z",
+      "userName": "Gareth Pendleton",
+      "feedbackType": "thumbsUp",
+      "comment": "Within the service period, the customer shall have access to the commissioned service in accordance with its intended use and taking into account the agreed service level.",
+      "category": "Other",
+      "conversationId": "a:1443WMbOMl"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-10-29T15:48:54.525250Z",
+      "userName": "Tony Lorino",
+      "feedbackType": "thumbsUp",
+      "comment": "Checking on the color of the thumbs up icon",
+      "category": "Other",
+      "conversationId": "bf3ea5cd-670"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-10-29T15:32:08.770753Z",
+      "userName": "Ken Stager",
+      "feedbackType": "thumbsUp",
+      "comment": "",
+      "category": "Other",
+      "conversationId": "051362be-434"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-10-29T14:51:13.749243Z",
+      "userName": "Ken Stager",
+      "feedbackType": "thumbsUp",
+      "comment": "",
+      "category": "Other",
+      "conversationId": "b1d9670e-f65"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-10-29T14:47:02.852699Z",
+      "userName": "Ken Stager",
+      "feedbackType": "thumbsDown",
+      "comment": "",
+      "category": "Other",
+      "conversationId": "b1d9670e-f65"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-10-29T14:45:42.330008Z",
+      "userName": "Ken Stager",
+      "feedbackType": "thumbsUp",
+      "comment": "",
+      "category": "Other",
+      "conversationId": "b1d9670e-f65"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-10-28T12:14:30.550Z",
+      "userName": "Vera Singer",
+      "feedbackType": "thumbsDown",
+      "comment": "skip",
+      "category": "Other",
+      "conversationId": "a:1m5Vfvg14I"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-10-27T20:40:15.456153Z",
+      "userName": "Jackie Moran",
+      "feedbackType": "thumbsUp",
+      "comment": "",
+      "category": "Other",
+      "conversationId": "ba994d70-607"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-10-27T19:09:25.481701Z",
+      "userName": "Melonie Poole",
+      "feedbackType": "thumbsUp",
+      "comment": "Thank you!",
+      "category": "Other",
+      "conversationId": "a01ad58a-3b3"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-10-27T19:00:04.547337Z",
+      "userName": "Tony Lorino",
+      "feedbackType": "thumbsUp",
+      "comment": "Didn't fall for my trap",
+      "category": "Out-of-Scope",
+      "conversationId": "a6d8b4d6-0e7"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-10-27T18:58:40.386560Z",
+      "userName": "Tony Lorino",
+      "feedbackType": "thumbsUp",
+      "comment": "Good use of the system",
+      "category": "Other",
+      "conversationId": "a6d8b4d6-0e7"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-10-27T18:56:31.334012Z",
+      "userName": "Tony Lorino",
+      "feedbackType": "thumbsUp",
+      "comment": "This is a great response, targeted to a specific position in the document.",
+      "category": "Out-of-Scope",
+      "conversationId": "a6d8b4d6-0e7"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-10-27T18:47:22.511748Z",
+      "userName": "Tony Lorino",
+      "feedbackType": "thumbsDown",
+      "comment": "The sky wasn't green yesterday, how could you not know that?",
+      "category": "Out-of-Scope",
+      "conversationId": "90945746-7fb"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-10-27T15:42:15.983816Z",
+      "userName": "Melonie Poole",
+      "feedbackType": "thumbsUp",
+      "comment": "Testing...",
+      "category": "Other",
+      "conversationId": "b1366e94-ec7"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-10-27T14:04:57.304415Z",
+      "userName": "Tony Lorino",
+      "feedbackType": "thumbsUp",
+      "comment": "It works!",
+      "category": "Other",
+      "conversationId": "90945746-7fb"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-10-27T14:04:48.721199Z",
+      "userName": "Sudarshan Srinivasan",
+      "feedbackType": "thumbsUp",
+      "comment": "",
+      "category": "Other",
+      "conversationId": "1b10f68a-f0e"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-10-27T02:27:33.548868Z",
+      "userName": "Ken Stager",
+      "feedbackType": "thumbsUp",
+      "comment": "Thanks, Ken!",
+      "category": "Other",
+      "conversationId": "b7d490db-8d7"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-10-26T04:12:22.287680Z",
+      "userName": "Ken Stager",
+      "feedbackType": "thumbsDown",
+      "comment": "",
+      "category": "Other",
+      "conversationId": "2ab7342d-bc8"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-10-26T04:11:36.586451Z",
+      "userName": "E2E Test User",
+      "feedbackType": "thumbsDown",
+      "comment": "Testing end-to-end after UI deployment",
+      "category": "Other",
+      "conversationId": "test-e2e-176"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-10-26T03:57:01.719984Z",
+      "userName": "Production Test User",
+      "feedbackType": "thumbsUp",
+      "comment": "Testing feedback endpoint in production after func publish",
+      "category": "Other",
+      "conversationId": "prod-test-17"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-10-24T00:32:27.049Z",
+      "userName": "Anthony Raffaele",
+      "feedbackType": "thumbsUp",
+      "comment": "thank you",
+      "category": "Other",
+      "conversationId": "a:1yt88we9lz"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-10-23T15:58:25.545Z",
+      "userName": "Diane Barrett",
+      "feedbackType": "thumbsDown",
+      "comment": "PBB = Powered-Base Building for Digital Realty",
+      "category": "General Info",
+      "conversationId": "a:1U3RmU7H5p"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-10-21T12:06:48.430Z",
+      "userName": "Gareth Pendleton",
+      "feedbackType": "thumbsUp",
+      "comment": "Critical vendors",
+      "category": "Other",
+      "conversationId": "a:1443WMbOMl"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-10-21T07:33:16.731Z",
+      "userName": "Vera Singer",
+      "feedbackType": "thumbsDown",
+      "comment": "skip",
+      "category": "Other",
+      "conversationId": "a:1m5Vfvg14I"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-10-17T11:33:25.671Z",
+      "userName": "Ryan Bezuidenhout",
+      "feedbackType": "thumbsUp",
+      "comment": "do we have 50kw space in LON1",
+      "category": "Capacity",
+      "conversationId": "a:1B3RzqUrO7"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-10-14T19:54:35.842Z",
+      "userName": "Shaloma Wagstaffe",
+      "feedbackType": "thumbsUp",
+      "comment": "yes i would like you to guide me on how to analyze it for:\r\n\r\nThis year's onboarding completion trends, such as monthly completion rates, completion time averages, and bottlenecks.Year-over-year comparisons, like changes in total hires, completion percentages, and process efficiency improvements.",
+      "category": "Out-of-Scope",
+      "conversationId": "a:1xCcDSPFT6"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-10-13T13:29:06.660Z",
+      "userName": "Mikkel Beenfeldt",
+      "feedbackType": "thumbsDown",
+      "comment": "Precurement p\u00e5 dansk",
+      "category": "Other",
+      "conversationId": "a:1kZMlwntIR"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-10-13T12:54:02.955Z",
+      "userName": "Koenraad Zirkzee",
+      "feedbackType": "thumbsDown",
+      "comment": "what type of UPS systems do we have at AMS9?",
+      "category": "Facilities",
+      "conversationId": "a:1O7JLKS3QJ"
+    },
+    {
+      "id": "feedback-176",
+      "timestamp": "2025-10-09T10:53:02.797Z",
+      "userName": "Lynn Carter",
+      "feedbackType": "thumbsUp",
+      "comment": "yes",
+      "category": "Other",
+      "conversationId": "a:1AXJE49IYl"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-10-09T07:53:24.845Z",
+      "userName": "Vera Singer",
+      "feedbackType": "thumbsUp",
+      "comment": "skip",
+      "category": "Other",
+      "conversationId": "a:1m5Vfvg14I"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-10-07T19:15:11.096Z",
+      "userName": "Zach Ng",
+      "feedbackType": "thumbsDown",
+      "comment": "what does IOU stand for?",
+      "category": "Other",
+      "conversationId": "a:1LgduUc5aE"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-10-02T21:51:52.558Z",
+      "userName": "Terence Watkins",
+      "feedbackType": "thumbsUp",
+      "comment": "yes",
+      "category": "Other",
+      "conversationId": "a:1YjDIbgdKL"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-09-30T18:03:13.949Z",
+      "userName": "Jason Huang",
+      "feedbackType": "thumbsDown",
+      "comment": "The info in this SharePoint is what I am looking for Contingent Workers and Security Officers",
+      "category": "Out-of-Scope",
+      "conversationId": "a:1Y2RvJLt-S"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-09-29T16:11:07.800Z",
+      "userName": "St\u00e9phane Garcelon",
+      "feedbackType": "thumbsDown",
+      "comment": "Dusseldorf has 3 sites : DUS1, DUS2 and DUS3 ... not DUS010, DUS011 and DUS013. Please double check the names of the data centres globally. Up-to-date names should be aligned with the list of data center provided on the DLR website / public informaiton",
+      "category": "Facilities",
+      "conversationId": "a:16FtkmO-OO"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-09-29T16:10:50.141Z",
+      "userName": "Charlotte Maijala",
+      "feedbackType": "thumbsUp",
+      "comment": "yes",
+      "category": "Other",
+      "conversationId": "a:1mE4MAh7Aj"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-09-29T16:08:23.646Z",
+      "userName": "Charlotte Maijala",
+      "feedbackType": "thumbsDown",
+      "comment": "skip",
+      "category": "Other",
+      "conversationId": "a:1mE4MAh7Aj"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-09-29T09:07:21.344Z",
+      "userName": "Martin Degen",
+      "feedbackType": "thumbsDown",
+      "comment": "the provided information is not correct",
+      "category": "Other",
+      "conversationId": "a:1_4b-gDkmi"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-09-29T01:27:04.653Z",
+      "userName": "Neha Mittal",
+      "feedbackType": "thumbsDown",
+      "comment": "how do I use you for other meeting chats?",
+      "category": "Out-of-Scope",
+      "conversationId": "a:1IJHqVbR_Y"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-09-26T16:04:47.281Z",
+      "userName": "Arnaud Dulac",
+      "feedbackType": "thumbsUp",
+      "comment": "quel est le process de novation ? ",
+      "category": "Out-of-Scope",
+      "conversationId": "a:1E3odZ5nxE"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-09-26T10:26:37.131Z",
+      "userName": "Dermot Lahey",
+      "feedbackType": "thumbsUp",
+      "comment": "yes",
+      "category": "Other",
+      "conversationId": "a:1QjOFC-J_o"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-09-26T06:46:09.532Z",
+      "userName": "Luise Gajda",
+      "feedbackType": "thumbsUp",
+      "comment": "What is the customer status of FRA28?",
+      "category": "Facilities",
+      "conversationId": "a:1EdqJj_Doy"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-09-26T06:43:31.193Z",
+      "userName": "Luise Gajda",
+      "feedbackType": "thumbsUp",
+      "comment": "Kann ich auch Fragen auf deutsch stellen?",
+      "category": "Other",
+      "conversationId": "a:1EdqJj_Doy"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-09-25T18:41:19.407Z",
+      "userName": "Zettie Denmark",
+      "feedbackType": "thumbsUp",
+      "comment": "Can you help with a recon on an account",
+      "category": "Other",
+      "conversationId": "a:1kUyRRUL4t"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-09-25T14:47:03.546Z",
+      "userName": "Jesse Bultongez",
+      "feedbackType": "thumbsUp",
+      "comment": "what can I use this for?",
+      "category": "Other",
+      "conversationId": "a:1xp2IVM-gS"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-09-25T12:13:43.816Z",
+      "userName": "Jeannette Havenga",
+      "feedbackType": "thumbsDown",
+      "comment": "Would you like me to walk you through the best-fit Digital Realty offering for this use case? yes",
+      "category": "General Info",
+      "conversationId": "a:1gLdKgrXi6"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-09-25T12:13:12.374Z",
+      "userName": "Jeannette Havenga",
+      "feedbackType": "thumbsUp",
+      "comment": "yes",
+      "category": "Other",
+      "conversationId": "a:1gLdKgrXi6"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-09-25T12:06:35.732Z",
+      "userName": "Holger Imanbai",
+      "feedbackType": "thumbsUp",
+      "comment": "was bedeutet Variance to Target PB ARPU in Salesforce",
+      "category": "Out-of-Scope",
+      "conversationId": "a:1Y8d97oir-"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-09-25T12:04:43.438Z",
+      "userName": "Thomas Kreser",
+      "feedbackType": "thumbsDown",
+      "comment": "This is not helpful",
+      "category": "Other",
+      "conversationId": "a:1BhH_yleTd"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-09-25T12:02:03.140Z",
+      "userName": "Dustin Sch\u00f6n",
+      "feedbackType": "thumbsDown",
+      "comment": "Which place in Europe has the most leasable capacity left over?",
+      "category": "Capacity",
+      "conversationId": "a:1pL6K-Xmoc"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-09-25T12:00:24.494Z",
+      "userName": "Thomas Kreser",
+      "feedbackType": "thumbsUp",
+      "comment": "please assist",
+      "category": "Other",
+      "conversationId": "a:1BhH_yleTd"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-09-25T11:44:11.491Z",
+      "userName": "Gilad Cohen",
+      "feedbackType": "thumbsDown",
+      "comment": "Please correct yourself",
+      "category": "Other",
+      "conversationId": "a:1drlN_r_nF"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-09-25T10:35:31.212Z",
+      "userName": "Steve Case",
+      "feedbackType": "thumbsUp",
+      "comment": "Skip",
+      "category": "Other",
+      "conversationId": "a:1aA8oHwB4g"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-09-25T09:37:18.191Z",
+      "userName": "Soufiane Chibani",
+      "feedbackType": "thumbsDown",
+      "comment": "This is inaccurate - the CEO is Andy Power ",
+      "category": "General Info",
+      "conversationId": "a:1ftKqEJza-"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-09-25T07:15:54.781Z",
+      "userName": "Philipp Zaumsegel",
+      "feedbackType": "thumbsUp",
+      "comment": "who is the ceo of DIgital Realty",
+      "category": "General Info",
+      "conversationId": "a:1dknRhmUQd"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-09-25T07:08:08.283Z",
+      "userName": "Corine de Goey",
+      "feedbackType": "thumbsDown",
+      "comment": "who is Corine de Goey",
+      "category": "Out-of-Scope",
+      "conversationId": "a:1KD_vAtiSi"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-09-25T04:29:40.933Z",
+      "userName": "Thorsten Kraft",
+      "feedbackType": "thumbsDown",
+      "comment": "skip",
+      "category": "Other",
+      "conversationId": "a:1thgtDSXvX"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-09-25T00:25:39.290Z",
+      "userName": "Adrian Keller",
+      "feedbackType": "thumbsDown",
+      "comment": "Chicago does have tax abatement. Here are the details. https://chatgpt.com/share/68d48bd4-f9d8-8004-aa54-fd63fd94df09",
+      "category": "Facilities",
+      "conversationId": "a:1gSa-C_8yD"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-09-24T22:36:34.793Z",
+      "userName": "Greg Mann",
+      "feedbackType": "thumbsUp",
+      "comment": "How many data centers does Digital Realty currently manage, including JV sites?",
+      "category": "Facilities",
+      "conversationId": "a:19NqcU7PzY"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-09-24T22:35:37.263Z",
+      "userName": "Greg Mann",
+      "feedbackType": "thumbsUp",
+      "comment": "yes",
+      "category": "Other",
+      "conversationId": "a:19NqcU7PzY"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-09-24T15:49:41.388Z",
+      "userName": "Simon Muskett",
+      "feedbackType": "thumbsDown",
+      "comment": "No, thats not what platform digital is",
+      "category": "Other",
+      "conversationId": "a:1v5ze9HocO"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-09-24T14:55:35.409Z",
+      "userName": "Ryan Lilliock",
+      "feedbackType": "thumbsDown",
+      "comment": "BOS76 is not a real data center",
+      "category": "Facilities",
+      "conversationId": "a:1DXzfXe_7v"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-09-24T14:39:00.226Z",
+      "userName": "Vasilios Vetter",
+      "feedbackType": "thumbsDown",
+      "comment": "The resulting ids are just a bunch of numbers and letters, not names. That is not helpful. ",
+      "category": "Other",
+      "conversationId": "a:18lJkyN-nP"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-09-23T14:10:42.589Z",
+      "userName": "Yogendra Mandavkar",
+      "feedbackType": "thumbsUp",
+      "comment": "walk me through the best-fit Digital Realty offerings for this use case?",
+      "category": "General Info",
+      "conversationId": "a:1NCkW-qpJJ"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-09-19T05:16:59.762Z",
+      "userName": "Christopher lee",
+      "feedbackType": "thumbsUp",
+      "comment": "where is SC1 located?",
+      "category": "Facilities",
+      "conversationId": "a:1kBObLyl3m"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-09-11T15:22:52.644Z",
+      "userName": "Christopher Watson",
+      "feedbackType": "thumbsDown",
+      "comment": "What capacity do we have in LGW14?",
+      "category": "Capacity",
+      "conversationId": "a:1JhVu1M_79"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-09-11T15:21:00.066Z",
+      "userName": "Christopher Watson",
+      "feedbackType": "thumbsDown",
+      "comment": "I am asking about this platform (you), (Digital Nexus 2.0)!",
+      "category": "Other",
+      "conversationId": "a:1JhVu1M_79"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-09-11T12:57:53.416Z",
+      "userName": "Sudarshan Srinivasan",
+      "feedbackType": "thumbsUp",
+      "comment": "the response provided for \"Layer2 to Azure in ServiceFabric\" was adequate",
+      "category": "Connectivity",
+      "conversationId": "a:1dHiOwSsnk"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-09-11T12:27:57.519Z",
+      "userName": "Sudarshan Srinivasan",
+      "feedbackType": "thumbsUp",
+      "comment": "Good response for this question. This saves me a lot of time",
+      "category": "Other",
+      "conversationId": "a:1dHiOwSsnk"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-09-10T15:11:07.748Z",
+      "userName": "Sudarshan Srinivasan",
+      "feedbackType": "thumbsUp",
+      "comment": "This answer was helpful",
+      "category": "Other",
+      "conversationId": "a:1dHiOwSsnk"
+    },
+    {
+      "id": "feedback-175",
+      "timestamp": "2025-08-29T09:55:43.436Z",
+      "userName": "Gareth Pendleton",
+      "feedbackType": "thumbsUp",
+      "comment": "yes please",
+      "category": "Other",
+      "conversationId": "a:1443WMbOMl"
+    }
+  ],
+  "metadata": {
+    "generatedAt": "2025-12-10T15:43:39.747624",
+    "dataSource": "production",
+    "aiCategorized": true
+  }
+}

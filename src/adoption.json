@@ -1,16 +1,16 @@
 {
-  "wau": 165,
-  "mau": 306,
-  "stickiness": 53.9,
-  "totalQueries": 8627,
-  "totalUsers": 834,
-  "queriesPerUser": 10.3,
-  "avgResponseTimeMs": 7258.0,
+  "wau": 143,
+  "mau": 321,
+  "stickiness": 44.5,
+  "totalQueries": 8779,
+  "totalUsers": 843,
+  "queriesPerUser": 10.4,
+  "avgResponseTimeMs": 7233.0,
   "peakHour": 10,
   "queryTrend": [
     {
       "date": "2025-11-10",
-      "count": 97
+      "count": 46
     },
     {
       "date": "2025-11-11",
@@ -114,7 +114,11 @@
     },
     {
       "date": "2025-12-09",
-      "count": 35
+      "count": 91
+    },
+    {
+      "date": "2025-12-10",
+      "count": 97
     }
   ],
   "topUsers": [
@@ -136,7 +140,7 @@
     },
     {
       "user": "3a92be97...",
-      "queries": 148
+      "queries": 154
     },
     {
       "user": "gating_f...",
@@ -160,7 +164,7 @@
     }
   ],
   "metadata": {
-    "generatedAt": "2025-12-09T10:45:31.150124",
+    "generatedAt": "2025-12-10T15:42:13.961915",
     "dataSource": "production"
   }
 }
