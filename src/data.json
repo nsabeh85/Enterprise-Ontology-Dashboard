@@ -1,71 +1,887 @@
 {
   "summary": {
-    "totalQueries": 47,
-    "rewrittenCount": 8,
-    "passthroughCount": 39,
-    "rewriteRate": 17.0,
-    "avgExpansionCount": 6.9
+    "totalQueries": 101,
+    "rewrittenCount": 57,
+    "passthroughCount": 44,
+    "rewriteRate": 56.4,
+    "avgExpansionCount": 7.1
   },
   "effectiveness": {
-    "rewrittenZeroRate": 12.5,
+    "rewrittenZeroRate": 8.8,
     "passthroughZeroRate": 20.5,
-    "rewrittenAvgResults": 28.0,
-    "passthroughAvgResults": 26.1
+    "rewrittenAvgResults": 41.6,
+    "passthroughAvgResults": 25.7
   },
   "latencyStats": {
-    "min": 0.29,
-    "max": 5.39,
-    "avg": 3.04,
-    "p95": 5.39,
+    "min": 0.21,
+    "max": 10.38,
+    "avg": 1.22,
+    "p95": 5.25,
     "target": 40
   },
   "qualityScores": {
     "rewritten": {
-      "relevance": 4.75,
-      "groundedness": 4.62,
-      "completeness": 4.5
+      "relevance": 4.47,
+      "groundedness": 4.67,
+      "completeness": 4.47
     },
     "passthrough": {
-      "relevance": 4.69,
-      "groundedness": 4.33,
+      "relevance": 4.68,
+      "groundedness": 4.34,
       "completeness": 4.41
     }
   },
   "topEntities": [
     {
       "entity": "availability",
-      "count": 3
-    },
-    {
-      "entity": "ServiceFabric",
-      "count": 3
-    },
-    {
-      "entity": "fabric",
-      "count": 2
-    },
-    {
-      "entity": "Metro Connect",
-      "count": 1
+      "count": 19
     },
     {
       "entity": "DFW10",
-      "count": 1
+      "count": 10
+    },
+    {
+      "entity": "ServiceFabric",
+      "count": 9
     },
     {
       "entity": "PHX10",
-      "count": 1
-    },
-    {
-      "entity": "capacity",
-      "count": 1
+      "count": 7
     },
     {
       "entity": "Colocation",
-      "count": 1
+      "count": 5
+    },
+    {
+      "entity": "capacity",
+      "count": 5
+    },
+    {
+      "entity": "fabric",
+      "count": 4
+    },
+    {
+      "entity": "Metro Connect",
+      "count": 3
+    },
+    {
+      "entity": "cooling",
+      "count": 2
+    },
+    {
+      "entity": "NSP",
+      "count": 2
     }
   ],
   "rewrittenQueries": [
+    {
+      "id": "test-dep",
+      "query": "Is SF available at DFW10?",
+      "matchedEntities": [
+        "ServiceFabric",
+        "DFW10",
+        "availability"
+      ],
+      "expansionCount": 8,
+      "expandedQuery": "ServiceFabric^1.0 OR DFW10^1.0 OR availability^1.0 OR SF^0.8 OR \"Service Fabric\"^0.8 OR \"Dallas site\"^0.8 OR \"2323 Bryan Street\"^0.8",
+      "rewriteTimeMs": 10.38,
+      "resultCount": 45,
+      "scores": {
+        "relevance": 5,
+        "groundedness": 4,
+        "completeness": 5
+      }
+    },
+    {
+      "id": "test-dep",
+      "query": "Is SF available at DFW10?",
+      "matchedEntities": [
+        "ServiceFabric",
+        "DFW10",
+        "availability"
+      ],
+      "expansionCount": 8,
+      "expandedQuery": "ServiceFabric^1.0 OR DFW10^1.0 OR availability^1.0 OR SF^0.8 OR \"Service Fabric\"^0.8 OR \"Dallas site\"^0.8 OR \"2323 Bryan Street\"^0.8",
+      "rewriteTimeMs": 3.11,
+      "resultCount": 45,
+      "scores": {
+        "relevance": 5,
+        "groundedness": 5,
+        "completeness": 5
+      }
+    },
+    {
+      "id": "test-001",
+      "query": "Is SF available at DFW10?",
+      "matchedEntities": [
+        "ServiceFabric",
+        "DFW10",
+        "availability"
+      ],
+      "expansionCount": 8,
+      "expandedQuery": "ServiceFabric^1.0 OR DFW10^1.0 OR availability^1.0 OR SF^0.8 OR \"Service Fabric\"^0.8 OR \"Dallas site\"^0.8 OR \"2323 Bryan Street\"^0.8",
+      "rewriteTimeMs": 2.49,
+      "resultCount": 45,
+      "scores": {
+        "relevance": 5,
+        "groundedness": 5,
+        "completeness": 5
+      }
+    },
+    {
+      "id": "test-002",
+      "query": "Tell me about ServiceFabric",
+      "matchedEntities": [
+        "ServiceFabric"
+      ],
+      "expansionCount": 7,
+      "expandedQuery": "ServiceFabric^1.0 OR SF^0.8 OR \"Service Fabric\"^0.8 OR \"Metro Connect\"^0.6 OR Megaport^0.6 OR connectivity^0.6",
+      "rewriteTimeMs": 4.01,
+      "resultCount": 45,
+      "scores": {
+        "relevance": 5,
+        "groundedness": 5,
+        "completeness": 5
+      }
+    },
+    {
+      "id": "test-003",
+      "query": "Colocation in Dallas",
+      "matchedEntities": [
+        "Colocation"
+      ],
+      "expansionCount": 6,
+      "expandedQuery": "Colocation^1.0 OR colo^0.8 OR co-location^0.8 OR rack^0.6 OR cage^0.6 OR suite^0.6",
+      "rewriteTimeMs": 2.65,
+      "resultCount": 96,
+      "scores": {
+        "relevance": 3,
+        "groundedness": 4,
+        "completeness": 4
+      }
+    },
+    {
+      "id": "test-004",
+      "query": "What capacity is available at PHX10?",
+      "matchedEntities": [
+        "PHX10",
+        "capacity",
+        "availability"
+      ],
+      "expansionCount": 8,
+      "expandedQuery": "PHX10^1.0 OR capacity^1.0 OR availability^1.0 OR \"Phoenix site\"^0.8 OR \"Phoenix data center\"^0.8 OR \"available capacity\"^0.8 OR \"power capacity\"^0.8 OR MW^0.8",
+      "rewriteTimeMs": 5.25,
+      "resultCount": 21,
+      "scores": {
+        "relevance": 5,
+        "groundedness": 5,
+        "completeness": 5
+      }
+    },
+    {
+      "id": "test-005",
+      "query": "Metro Connect pricing",
+      "matchedEntities": [
+        "Metro Connect"
+      ],
+      "expansionCount": 5,
+      "expandedQuery": "\"Metro Connect\"^1.0 OR MetroConnect^0.8 OR fiber^0.6 OR connectivity^0.6 OR campus^0.6",
+      "rewriteTimeMs": 3.64,
+      "resultCount": 30,
+      "scores": {
+        "relevance": 4,
+        "groundedness": 5,
+        "completeness": 4
+      }
+    },
+    {
+      "id": "test-006",
+      "query": "Is colo available in Phoenix?",
+      "matchedEntities": [
+        "Colocation",
+        "availability"
+      ],
+      "expansionCount": 8,
+      "expandedQuery": "Colocation^1.0 OR availability^1.0 OR colo^0.8 OR co-location^0.8 OR uptime^0.8 OR SLA^0.8 OR available^0.8 OR rack^0.6",
+      "rewriteTimeMs": 0.24,
+      "resultCount": 15,
+      "scores": {
+        "relevance": 4,
+        "groundedness": 5,
+        "completeness": 4
+      }
+    },
+    {
+      "id": "test-007",
+      "query": "What is ServiceFabric?",
+      "matchedEntities": [
+        "ServiceFabric"
+      ],
+      "expansionCount": 7,
+      "expandedQuery": "ServiceFabric^1.0 OR SF^0.8 OR \"Service Fabric\"^0.8 OR \"Metro Connect\"^0.6 OR Megaport^0.6 OR connectivity^0.6",
+      "rewriteTimeMs": 0.22,
+      "resultCount": 45,
+      "scores": {
+        "relevance": 5,
+        "groundedness": 5,
+        "completeness": 5
+      }
+    },
+    {
+      "id": "test-008",
+      "query": "DFW10 power capacity",
+      "matchedEntities": [
+        "DFW10",
+        "capacity"
+      ],
+      "expansionCount": 8,
+      "expandedQuery": "DFW10^1.0 OR capacity^1.0 OR \"Dallas site\"^0.8 OR \"2323 Bryan Street\"^0.8 OR \"Dallas data center\"^0.8 OR \"available capacity\"^0.8 OR \"power capacity\"^0.8 OR MW^0.8",
+      "rewriteTimeMs": 0.87,
+      "resultCount": 21,
+      "scores": {
+        "relevance": 5,
+        "groundedness": 5,
+        "completeness": 5
+      }
+    },
+    {
+      "id": "test-009",
+      "query": "Available space in Dallas",
+      "matchedEntities": [
+        "availability"
+      ],
+      "expansionCount": 7,
+      "expandedQuery": "availability^1.0 OR uptime^0.8 OR SLA^0.8 OR available^0.8 OR redundancy^0.6 OR reliability^0.6 OR capacity^0.6",
+      "rewriteTimeMs": 1.02,
+      "resultCount": 30,
+      "scores": {
+        "relevance": 3,
+        "groundedness": 4,
+        "completeness": 3
+      }
+    },
+    {
+      "id": "test-010",
+      "query": "PHX10 cooling systems",
+      "matchedEntities": [
+        "PHX10",
+        "cooling"
+      ],
+      "expansionCount": 8,
+      "expandedQuery": "PHX10^1.0 OR cooling^1.0 OR \"Phoenix site\"^0.8 OR \"Phoenix data center\"^0.8 OR \"cooling system\"^0.8 OR HVAC^0.8 OR \"liquid cooling\"^0.8 OR \"air cooling\"^0.8",
+      "rewriteTimeMs": 0.69,
+      "resultCount": 6,
+      "scores": {
+        "relevance": 3,
+        "groundedness": 5,
+        "completeness": 3
+      }
+    },
+    {
+      "id": "test-011",
+      "query": "Network providers at DFW10",
+      "matchedEntities": [
+        "DFW10",
+        "NSP"
+      ],
+      "expansionCount": 8,
+      "expandedQuery": "DFW10^1.0 OR NSP^1.0 OR \"Dallas site\"^0.8 OR \"2323 Bryan Street\"^0.8 OR \"Dallas data center\"^0.8 OR \"Network Service Provider\"^0.8 OR \"network provider\"^0.8 OR carrier^0.8",
+      "rewriteTimeMs": 0.4,
+      "resultCount": 150,
+      "scores": {
+        "relevance": 5,
+        "groundedness": 4,
+        "completeness": 5
+      }
+    },
+    {
+      "id": "test-013",
+      "query": "What certifications does DFW10 have?",
+      "matchedEntities": [
+        "DFW10"
+      ],
+      "expansionCount": 7,
+      "expandedQuery": "DFW10^1.0 OR \"Dallas site\"^0.8 OR \"2323 Bryan Street\"^0.8 OR \"Dallas data center\"^0.8 OR Texas^0.6 OR DFW^0.6 OR Dallas^0.6",
+      "rewriteTimeMs": 0.27,
+      "resultCount": 2,
+      "scores": {
+        "relevance": 5,
+        "groundedness": 4,
+        "completeness": 4
+      }
+    },
+    {
+      "id": "test-014",
+      "query": "Latency to AWS from Dallas",
+      "matchedEntities": [
+        "latency"
+      ],
+      "expansionCount": 7,
+      "expandedQuery": "latency^1.0 OR \"network latency\"^0.8 OR delay^0.8 OR ping^0.8 OR performance^0.6 OR connectivity^0.6 OR speed^0.6",
+      "rewriteTimeMs": 0.26,
+      "resultCount": 15,
+      "scores": {
+        "relevance": 3,
+        "groundedness": 5,
+        "completeness": 3
+      }
+    },
+    {
+      "id": "test-015",
+      "query": "Is Megaport available?",
+      "matchedEntities": [
+        "Megaport",
+        "availability"
+      ],
+      "expansionCount": 8,
+      "expandedQuery": "Megaport^1.0 OR availability^1.0 OR \"Megaport connectivity\"^0.8 OR uptime^0.8 OR SLA^0.8 OR available^0.8 OR ServiceFabric^0.6 OR connectivity^0.6",
+      "rewriteTimeMs": 0.22,
+      "resultCount": 45,
+      "scores": {
+        "relevance": 4,
+        "groundedness": 5,
+        "completeness": 5
+      }
+    },
+    {
+      "id": "test-016",
+      "query": "Colocation pricing",
+      "matchedEntities": [
+        "Colocation"
+      ],
+      "expansionCount": 6,
+      "expandedQuery": "Colocation^1.0 OR colo^0.8 OR co-location^0.8 OR rack^0.6 OR cage^0.6 OR suite^0.6",
+      "rewriteTimeMs": 0.31,
+      "resultCount": 0,
+      "scores": {
+        "relevance": 4,
+        "groundedness": 5,
+        "completeness": 4
+      }
+    },
+    {
+      "id": "test-018",
+      "query": "Phoenix data center capacity",
+      "matchedEntities": [
+        "PHX10",
+        "capacity"
+      ],
+      "expansionCount": 8,
+      "expandedQuery": "PHX10^1.0 OR capacity^1.0 OR \"Phoenix site\"^0.8 OR \"Phoenix data center\"^0.8 OR \"available capacity\"^0.8 OR \"power capacity\"^0.8 OR MW^0.8 OR megawatt^0.8",
+      "rewriteTimeMs": 0.39,
+      "resultCount": 6,
+      "scores": {
+        "relevance": 5,
+        "groundedness": 5,
+        "completeness": 5
+      }
+    },
+    {
+      "id": "test-019",
+      "query": "SF connectivity options",
+      "matchedEntities": [
+        "availability"
+      ],
+      "expansionCount": 7,
+      "expandedQuery": "availability^1.0 OR uptime^0.8 OR SLA^0.8 OR available^0.8 OR redundancy^0.6 OR reliability^0.6 OR capacity^0.6",
+      "rewriteTimeMs": 0.29,
+      "resultCount": 34,
+      "scores": {
+        "relevance": 4,
+        "groundedness": 5,
+        "completeness": 5
+      }
+    },
+    {
+      "id": "test-020",
+      "query": "Cross connect at DFW10",
+      "matchedEntities": [
+        "DFW10"
+      ],
+      "expansionCount": 7,
+      "expandedQuery": "DFW10^1.0 OR \"Dallas site\"^0.8 OR \"2323 Bryan Street\"^0.8 OR \"Dallas data center\"^0.8 OR Texas^0.6 OR DFW^0.6 OR Dallas^0.6",
+      "rewriteTimeMs": 0.21,
+      "resultCount": 7,
+      "scores": {
+        "relevance": 4,
+        "groundedness": 4,
+        "completeness": 4
+      }
+    },
+    {
+      "id": "test-021",
+      "query": "PUE at PHX10",
+      "matchedEntities": [
+        "PHX10",
+        "PUE"
+      ],
+      "expansionCount": 8,
+      "expandedQuery": "PHX10^1.0 OR PUE^1.0 OR \"Phoenix site\"^0.8 OR \"Phoenix data center\"^0.8 OR \"Power Usage Effectiveness\"^0.8 OR \"power efficiency\"^0.8 OR Arizona^0.6 OR PHX^0.6",
+      "rewriteTimeMs": 0.22,
+      "resultCount": 6,
+      "scores": {
+        "relevance": 4,
+        "groundedness": 5,
+        "completeness": 4
+      }
+    },
+    {
+      "id": "test-022",
+      "query": "Generator backup at Dallas",
+      "matchedEntities": [
+        "generator"
+      ],
+      "expansionCount": 7,
+      "expandedQuery": "generator^1.0 OR \"backup generator\"^0.8 OR \"diesel generator\"^0.8 OR \"power backup\"^0.8 OR UPS^0.6 OR power^0.6 OR redundancy^0.6",
+      "rewriteTimeMs": 0.22,
+      "resultCount": 0,
+      "scores": {
+        "relevance": 4,
+        "groundedness": 5,
+        "completeness": 4
+      }
+    },
+    {
+      "id": "test-023",
+      "query": "Redundancy options",
+      "matchedEntities": [
+        "redundancy"
+      ],
+      "expansionCount": 8,
+      "expandedQuery": "redundancy^1.0 OR redundant^0.8 OR N+1^0.8 OR 2N^0.8 OR \"fault tolerant\"^0.8 OR uptime^0.6 OR reliability^0.6 OR availability^0.6",
+      "rewriteTimeMs": 0.33,
+      "resultCount": 23,
+      "scores": {
+        "relevance": 5,
+        "groundedness": 5,
+        "completeness": 5
+      }
+    },
+    {
+      "id": "test-024",
+      "query": "Scale deployment options",
+      "matchedEntities": [
+        "Scale",
+        "deployment"
+      ],
+      "expansionCount": 8,
+      "expandedQuery": "Scale^1.0 OR deployment^1.0 OR \"Scale product\"^0.8 OR \"DLR Scale\"^0.8 OR deploy^0.8 OR installation^0.8 OR build-out^0.8 OR hyperscale^0.6",
+      "rewriteTimeMs": 0.31,
+      "resultCount": 15,
+      "scores": {
+        "relevance": 5,
+        "groundedness": 5,
+        "completeness": 5
+      }
+    },
+    {
+      "id": "test-025",
+      "query": "PlatformDIGITAL features",
+      "matchedEntities": [
+        "PlatformDIGITAL"
+      ],
+      "expansionCount": 5,
+      "expandedQuery": "PlatformDIGITAL^1.0 OR \"Platform Digital\"^0.8 OR \"global platform\"^0.6 OR interconnection^0.6",
+      "rewriteTimeMs": 0.3,
+      "resultCount": 15,
+      "scores": {
+        "relevance": 5,
+        "groundedness": 5,
+        "completeness": 5
+      }
+    },
+    {
+      "id": "test-026",
+      "query": "DRIX availability",
+      "matchedEntities": [
+        "DRIX",
+        "availability"
+      ],
+      "expansionCount": 8,
+      "expandedQuery": "DRIX^1.0 OR availability^1.0 OR \"Digital Realty Internet Exchange\"^0.8 OR \"internet exchange\"^0.8 OR uptime^0.8 OR SLA^0.8 OR available^0.8 OR peering^0.6",
+      "rewriteTimeMs": 0.25,
+      "resultCount": 30,
+      "scores": {
+        "relevance": 5,
+        "groundedness": 4,
+        "completeness": 5
+      }
+    },
+    {
+      "id": "test-027",
+      "query": "Internet exchange in Dallas",
+      "matchedEntities": [
+        "DRIX"
+      ],
+      "expansionCount": 6,
+      "expandedQuery": "DRIX^1.0 OR \"Digital Realty Internet Exchange\"^0.8 OR \"internet exchange\"^0.8 OR peering^0.6 OR IX^0.6 OR exchange^0.6",
+      "rewriteTimeMs": 0.21,
+      "resultCount": 150,
+      "scores": {
+        "relevance": 5,
+        "groundedness": 4,
+        "completeness": 4
+      }
+    },
+    {
+      "id": "test-028",
+      "query": "Network fabric topology",
+      "matchedEntities": [
+        "fabric"
+      ],
+      "expansionCount": 6,
+      "expandedQuery": "fabric^1.0 OR \"network fabric\"^0.8 OR \"switching fabric\"^0.8 OR ServiceFabric^0.6 OR network^0.6 OR topology^0.6",
+      "rewriteTimeMs": 0.23,
+      "resultCount": 23,
+      "scores": {
+        "relevance": 5,
+        "groundedness": 5,
+        "completeness": 5
+      }
+    },
+    {
+      "id": "test-029",
+      "query": "Cabinet availability",
+      "matchedEntities": [
+        "availability"
+      ],
+      "expansionCount": 7,
+      "expandedQuery": "availability^1.0 OR uptime^0.8 OR SLA^0.8 OR available^0.8 OR redundancy^0.6 OR reliability^0.6 OR capacity^0.6",
+      "rewriteTimeMs": 0.22,
+      "resultCount": 150,
+      "scores": {
+        "relevance": 5,
+        "groundedness": 5,
+        "completeness": 5
+      }
+    },
+    {
+      "id": "test-030",
+      "query": "Cage options at PHX10",
+      "matchedEntities": [
+        "PHX10"
+      ],
+      "expansionCount": 6,
+      "expandedQuery": "PHX10^1.0 OR \"Phoenix site\"^0.8 OR \"Phoenix data center\"^0.8 OR Arizona^0.6 OR PHX^0.6 OR Phoenix^0.6",
+      "rewriteTimeMs": 0.25,
+      "resultCount": 150,
+      "scores": {
+        "relevance": 5,
+        "groundedness": 5,
+        "completeness": 4
+      }
+    },
+    {
+      "id": "test-031",
+      "query": "Suite availability DFW10",
+      "matchedEntities": [
+        "DFW10",
+        "availability"
+      ],
+      "expansionCount": 8,
+      "expandedQuery": "DFW10^1.0 OR availability^1.0 OR \"Dallas site\"^0.8 OR \"2323 Bryan Street\"^0.8 OR \"Dallas data center\"^0.8 OR uptime^0.8 OR SLA^0.8 OR available^0.8",
+      "rewriteTimeMs": 0.33,
+      "resultCount": 15,
+      "scores": {
+        "relevance": 2,
+        "groundedness": 5,
+        "completeness": 3
+      }
+    },
+    {
+      "id": "test-032",
+      "query": "Rack power density",
+      "matchedEntities": [
+        "rack"
+      ],
+      "expansionCount": 6,
+      "expandedQuery": "rack^1.0 OR \"server rack\"^0.8 OR cabinet^0.8 OR cage^0.6 OR suite^0.6 OR colocation^0.6",
+      "rewriteTimeMs": 0.39,
+      "resultCount": 0,
+      "scores": {
+        "relevance": 5,
+        "groundedness": 2,
+        "completeness": 4
+      }
+    },
+    {
+      "id": "test-033",
+      "query": "Liquid cooling available?",
+      "matchedEntities": [
+        "cooling",
+        "availability"
+      ],
+      "expansionCount": 8,
+      "expandedQuery": "cooling^1.0 OR availability^1.0 OR \"cooling system\"^0.8 OR HVAC^0.8 OR \"liquid cooling\"^0.8 OR \"air cooling\"^0.8 OR uptime^0.8 OR SLA^0.8",
+      "rewriteTimeMs": 0.23,
+      "resultCount": 15,
+      "scores": {
+        "relevance": 4,
+        "groundedness": 5,
+        "completeness": 4
+      }
+    },
+    {
+      "id": "test-034",
+      "query": "NVIDIA certified facilities",
+      "matchedEntities": [
+        "certification"
+      ],
+      "expansionCount": 8,
+      "expandedQuery": "certification^1.0 OR certified^0.8 OR compliance^0.8 OR SOC^0.8 OR ISO^0.8 OR security^0.6 OR audit^0.6 OR standards^0.6",
+      "rewriteTimeMs": 0.29,
+      "resultCount": 30,
+      "scores": {
+        "relevance": 5,
+        "groundedness": 5,
+        "completeness": 5
+      }
+    },
+    {
+      "id": "test-035",
+      "query": "Hyperscaler requirements",
+      "matchedEntities": [
+        "CSP"
+      ],
+      "expansionCount": 7,
+      "expandedQuery": "CSP^1.0 OR \"Cloud Service Provider\"^0.8 OR \"cloud provider\"^0.8 OR hyperscaler^0.8 OR AWS^0.6 OR Azure^0.6 OR \"Google Cloud\"^0.6",
+      "rewriteTimeMs": 0.21,
+      "resultCount": 15,
+      "scores": {
+        "relevance": 5,
+        "groundedness": 5,
+        "completeness": 5
+      }
+    },
+    {
+      "id": "test-036",
+      "query": "CSP on-ramps",
+      "matchedEntities": [
+        "CSP"
+      ],
+      "expansionCount": 7,
+      "expandedQuery": "CSP^1.0 OR \"Cloud Service Provider\"^0.8 OR \"cloud provider\"^0.8 OR hyperscaler^0.8 OR AWS^0.6 OR Azure^0.6 OR \"Google Cloud\"^0.6",
+      "rewriteTimeMs": 0.21,
+      "resultCount": 15,
+      "scores": {
+        "relevance": 5,
+        "groundedness": 4,
+        "completeness": 5
+      }
+    },
+    {
+      "id": "test-037",
+      "query": "NSP list at DFW10",
+      "matchedEntities": [
+        "DFW10",
+        "NSP"
+      ],
+      "expansionCount": 8,
+      "expandedQuery": "DFW10^1.0 OR NSP^1.0 OR \"Dallas site\"^0.8 OR \"2323 Bryan Street\"^0.8 OR \"Dallas data center\"^0.8 OR \"Network Service Provider\"^0.8 OR \"network provider\"^0.8 OR carrier^0.8",
+      "rewriteTimeMs": 0.37,
+      "resultCount": 150,
+      "scores": {
+        "relevance": 4,
+        "groundedness": 4,
+        "completeness": 4
+      }
+    },
+    {
+      "id": "test-038",
+      "query": "EMEA data centers",
+      "matchedEntities": [
+        "EMEA"
+      ],
+      "expansionCount": 6,
+      "expandedQuery": "EMEA^1.0 OR Europe^0.8 OR European^0.8 OR Frankfurt^0.6 OR London^0.6 OR Amsterdam^0.6",
+      "rewriteTimeMs": 0.32,
+      "resultCount": 150,
+      "scores": {
+        "relevance": 5,
+        "groundedness": 5,
+        "completeness": 5
+      }
+    },
+    {
+      "id": "test-039",
+      "query": "APAC locations",
+      "matchedEntities": [
+        "APAC"
+      ],
+      "expansionCount": 6,
+      "expandedQuery": "APAC^1.0 OR \"Asia Pacific\"^0.8 OR Asia^0.8 OR Singapore^0.6 OR Tokyo^0.6 OR \"Hong Kong\"^0.6",
+      "rewriteTimeMs": 0.26,
+      "resultCount": 150,
+      "scores": {
+        "relevance": 5,
+        "groundedness": 5,
+        "completeness": 5
+      }
+    },
+    {
+      "id": "test-040",
+      "query": "North America facilities",
+      "matchedEntities": [
+        "North America"
+      ],
+      "expansionCount": 8,
+      "expandedQuery": "\"North America\"^1.0 OR NA^0.8 OR US^0.8 OR \"United States\"^0.8 OR Americas^0.8 OR Dallas^0.6 OR Chicago^0.6 OR Virginia^0.6",
+      "rewriteTimeMs": 0.27,
+      "resultCount": 13,
+      "scores": {
+        "relevance": 5,
+        "groundedness": 5,
+        "completeness": 4
+      }
+    },
+    {
+      "id": "test-041",
+      "query": "Dallas metro connect",
+      "matchedEntities": [
+        "Metro Connect"
+      ],
+      "expansionCount": 5,
+      "expandedQuery": "\"Metro Connect\"^1.0 OR MetroConnect^0.8 OR fiber^0.6 OR connectivity^0.6 OR campus^0.6",
+      "rewriteTimeMs": 0.22,
+      "resultCount": 15,
+      "scores": {
+        "relevance": 4,
+        "groundedness": 4,
+        "completeness": 4
+      }
+    },
+    {
+      "id": "test-042",
+      "query": "Phoenix interconnection",
+      "matchedEntities": [
+        "interconnection"
+      ],
+      "expansionCount": 7,
+      "expandedQuery": "interconnection^1.0 OR interconnect^0.8 OR cross-connect^0.8 OR connection^0.8 OR ServiceFabric^0.6 OR connectivity^0.6 OR network^0.6",
+      "rewriteTimeMs": 0.24,
+      "resultCount": 45,
+      "scores": {
+        "relevance": 3,
+        "groundedness": 4,
+        "completeness": 4
+      }
+    },
+    {
+      "id": "test-043",
+      "query": "Service Fabric pricing",
+      "matchedEntities": [
+        "ServiceFabric",
+        "fabric"
+      ],
+      "expansionCount": 8,
+      "expandedQuery": "ServiceFabric^1.0 OR fabric^1.0 OR SF^0.8 OR \"Service Fabric\"^0.8 OR \"network fabric\"^0.8 OR \"switching fabric\"^0.8 OR \"Metro Connect\"^0.6",
+      "rewriteTimeMs": 0.36,
+      "resultCount": 45,
+      "scores": {
+        "relevance": 5,
+        "groundedness": 5,
+        "completeness": 5
+      }
+    },
+    {
+      "id": "test-044",
+      "query": "Colo vs Scale comparison",
+      "matchedEntities": [
+        "Colocation",
+        "Scale"
+      ],
+      "expansionCount": 8,
+      "expandedQuery": "Colocation^1.0 OR Scale^1.0 OR colo^0.8 OR co-location^0.8 OR \"Scale product\"^0.8 OR \"DLR Scale\"^0.8 OR rack^0.6 OR cage^0.6",
+      "rewriteTimeMs": 0.36,
+      "resultCount": 15,
+      "scores": {
+        "relevance": 5,
+        "groundedness": 5,
+        "completeness": 5
+      }
+    },
+    {
+      "id": "test-045",
+      "query": "Deployment timeline",
+      "matchedEntities": [
+        "deployment"
+      ],
+      "expansionCount": 7,
+      "expandedQuery": "deployment^1.0 OR deploy^0.8 OR installation^0.8 OR build-out^0.8 OR capacity^0.6 OR timeline^0.6 OR project^0.6",
+      "rewriteTimeMs": 0.31,
+      "resultCount": 0,
+      "scores": {
+        "relevance": 4,
+        "groundedness": 5,
+        "completeness": 4
+      }
+    },
+    {
+      "id": "test-046",
+      "query": "Available MW in Dallas",
+      "matchedEntities": [
+        "capacity",
+        "availability"
+      ],
+      "expansionCount": 8,
+      "expandedQuery": "capacity^1.0 OR availability^1.0 OR \"available capacity\"^0.8 OR \"power capacity\"^0.8 OR MW^0.8 OR megawatt^0.8 OR kW^0.8 OR kilowatt^0.8",
+      "rewriteTimeMs": 0.28,
+      "resultCount": 15,
+      "scores": {
+        "relevance": 3,
+        "groundedness": 5,
+        "completeness": 4
+      }
+    },
+    {
+      "id": "test-047",
+      "query": "White space at PHX10",
+      "matchedEntities": [
+        "PHX10",
+        "availability"
+      ],
+      "expansionCount": 8,
+      "expandedQuery": "PHX10^1.0 OR availability^1.0 OR \"Phoenix site\"^0.8 OR \"Phoenix data center\"^0.8 OR uptime^0.8 OR SLA^0.8 OR available^0.8 OR Arizona^0.6",
+      "rewriteTimeMs": 0.24,
+      "resultCount": 15,
+      "scores": {
+        "relevance": 4,
+        "groundedness": 4,
+        "completeness": 5
+      }
+    },
+    {
+      "id": "test-048",
+      "query": "High density options",
+      "matchedEntities": [
+        "availability"
+      ],
+      "expansionCount": 7,
+      "expandedQuery": "availability^1.0 OR uptime^0.8 OR SLA^0.8 OR available^0.8 OR redundancy^0.6 OR reliability^0.6 OR capacity^0.6",
+      "rewriteTimeMs": 0.22,
+      "resultCount": 150,
+      "scores": {
+        "relevance": 5,
+        "groundedness": 5,
+        "completeness": 5
+      }
+    },
+    {
+      "id": "test-050",
+      "query": "24/7 support availability",
+      "matchedEntities": [
+        "availability"
+      ],
+      "expansionCount": 7,
+      "expandedQuery": "availability^1.0 OR uptime^0.8 OR SLA^0.8 OR available^0.8 OR redundancy^0.6 OR reliability^0.6 OR capacity^0.6",
+      "rewriteTimeMs": 0.37,
+      "resultCount": 30,
+      "scores": {
+        "relevance": 5,
+        "groundedness": 5,
+        "completeness": 5
+      }
+    },
     {
       "id": "test-050",
       "query": "24/7 support availability",
@@ -81,126 +897,52 @@
         "groundedness": 5,
         "completeness": 4
       }
-    },
-    {
-      "id": "test-043",
-      "query": "Service Fabric pricing",
-      "matchedEntities": [
-        "ServiceFabric",
-        "fabric"
-      ],
-      "expansionCount": 8,
-      "expandedQuery": "ServiceFabric^1.0 OR fabric^1.0 OR SF^0.8 OR \"Service Fabric\"^0.8 OR \"network fabric\"^0.8 OR \"switching fabric\"^0.8 OR \"Metro Connect\"^0.6",
-      "rewriteTimeMs": 0.32,
-      "resultCount": 45,
-      "scores": {
-        "relevance": 5,
-        "groundedness": 5,
-        "completeness": 5
-      }
-    },
-    {
-      "id": "test-028",
-      "query": "Network fabric topology",
-      "matchedEntities": [
-        "fabric"
-      ],
-      "expansionCount": 6,
-      "expandedQuery": "fabric^1.0 OR \"network fabric\"^0.8 OR \"switching fabric\"^0.8 OR ServiceFabric^0.6 OR network^0.6 OR topology^0.6",
-      "rewriteTimeMs": 0.29,
-      "resultCount": 23,
-      "scores": {
-        "relevance": 5,
-        "groundedness": 5,
-        "completeness": 5
-      }
-    },
-    {
-      "id": "test-005",
-      "query": "Metro Connect pricing",
-      "matchedEntities": [
-        "Metro Connect"
-      ],
-      "expansionCount": 5,
-      "expandedQuery": "\"Metro Connect\"^1.0 OR MetroConnect^0.8 OR fiber^0.6 OR connectivity^0.6 OR campus^0.6",
-      "rewriteTimeMs": 0.49,
-      "resultCount": 15,
-      "scores": {
-        "relevance": 3,
-        "groundedness": 4,
-        "completeness": 3
-      }
-    },
-    {
-      "id": "test-001",
-      "query": "Is SF available at DFW10?",
-      "matchedEntities": [
-        "ServiceFabric",
-        "DFW10",
-        "availability"
-      ],
-      "expansionCount": 8,
-      "expandedQuery": "ServiceFabric^1.0 OR DFW10^1.0 OR availability^1.0 OR SF^0.8 OR \"Service Fabric\"^0.8 OR \"Dallas site\"^0.8 OR \"2323 Bryan Street\"^0.8",
-      "rewriteTimeMs": 5.06,
-      "resultCount": 45,
-      "scores": {
-        "relevance": 5,
-        "groundedness": 5,
-        "completeness": 5
-      }
-    },
-    {
-      "id": "e2869b0f",
-      "query": "What capacity is available at PHX10?",
-      "matchedEntities": [
-        "PHX10",
-        "capacity",
-        "availability"
-      ],
-      "expansionCount": 8,
-      "expandedQuery": "PHX10^1.0 OR capacity^1.0 OR availability^1.0 OR \"Phoenix site\"^0.8 OR \"Phoenix data center\"^0.8 OR \"available capacity\"^0.8 OR \"power capacity\"^0.8 OR MW^0.8",
-      "rewriteTimeMs": 5.39,
-      "resultCount": 21,
-      "scores": {
-        "relevance": 5,
-        "groundedness": 5,
-        "completeness": 5
-      }
-    },
-    {
-      "id": "b0cf0dca",
-      "query": "Colocation in Dallas",
-      "matchedEntities": [
-        "Colocation"
-      ],
-      "expansionCount": 6,
-      "expandedQuery": "Colocation^1.0 OR colo^0.8 OR co-location^0.8 OR rack^0.6 OR cage^0.6 OR suite^0.6",
-      "rewriteTimeMs": 3.98,
-      "resultCount": 0,
-      "scores": {
-        "relevance": 5,
-        "groundedness": 3,
-        "completeness": 4
-      }
-    },
-    {
-      "id": "d11b67ee",
-      "query": "Tell me about ServiceFabric",
-      "matchedEntities": [
-        "ServiceFabric"
-      ],
-      "expansionCount": 7,
-      "expandedQuery": "ServiceFabric^1.0 OR SF^0.8 OR \"Service Fabric\"^0.8 OR \"Metro Connect\"^0.6 OR Megaport^0.6 OR connectivity^0.6",
-      "rewriteTimeMs": 4.19,
-      "resultCount": 45,
-      "scores": {
-        "relevance": 5,
-        "groundedness": 5,
-        "completeness": 5
-      }
     }
   ],
   "zeroResultQueries": [
+    {
+      "id": "test-016",
+      "query": "Colocation pricing",
+      "matchedEntities": [
+        "Colocation"
+      ],
+      "wasRewritten": true,
+      "timestamp": "2025-12-11T17:33:23.646176"
+    },
+    {
+      "id": "test-022",
+      "query": "Generator backup at Dallas",
+      "matchedEntities": [
+        "generator"
+      ],
+      "wasRewritten": true,
+      "timestamp": "2025-12-11T17:34:35.881353"
+    },
+    {
+      "id": "test-032",
+      "query": "Rack power density",
+      "matchedEntities": [
+        "rack"
+      ],
+      "wasRewritten": true,
+      "timestamp": "2025-12-11T17:37:58.059236"
+    },
+    {
+      "id": "test-045",
+      "query": "Deployment timeline",
+      "matchedEntities": [
+        "deployment"
+      ],
+      "wasRewritten": true,
+      "timestamp": "2025-12-11T17:42:12.861158"
+    },
+    {
+      "id": "test-049",
+      "query": "Remote hands support",
+      "matchedEntities": [],
+      "wasRewritten": false,
+      "timestamp": "2025-12-11T17:43:16.615991"
+    },
     {
       "id": "b02a1fd0",
       "query": "what certs are in jfk?",
@@ -268,7 +1010,7 @@
     }
   ],
   "metadata": {
-    "generatedAt": "2025-12-10T15:42:09.996215",
+    "generatedAt": "2025-12-11T13:10:49.324184",
     "dataSource": "staging"
   }
 }

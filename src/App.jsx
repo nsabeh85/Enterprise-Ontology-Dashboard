@@ -30,7 +30,7 @@ function App() {
           <div className="max-w-7xl mx-auto">
             <Routes>
               <Route path="/" element={<Overview />} />
-              <Route path="/rewriter" element={<QueryRewriter />} />
+              <Route path="/query-rewriter" element={<QueryRewriter />} />
               <Route path="/adoption" element={<Adoption />} />
               <Route path="/feedback" element={<Feedback />} />
               <Route path="/content-health" element={<ContentHealth />} />

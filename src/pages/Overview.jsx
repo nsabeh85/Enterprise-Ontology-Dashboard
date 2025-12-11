@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { 
   LayoutDashboard, 
   Sparkles, 
   Users, 
   ThumbsUp, 
   Target,
-  Clock
+  Clock,
+  FileSearch,
+  CheckCircle,
+  AlertCircle,
+  ChevronRight
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { COLORS } from '../App';
 import { Card, Badge, PageHeader } from '../components/ui';
 
@@ -15,8 +20,185 @@ import rewriterData from '../data.json';
 import adoptionData from '../adoption.json';
 import feedbackData from '../feedback.json';
 
+// =============================================================================
+// OBSERVABILITY SCORE CALCULATIONS
+// =============================================================================
+
+const calculateQueryPerformanceScore = (rewriterData) => {
+  const { summary, latencyStats, qualityScores } = rewriterData;
+  
+  const latency = latencyStats?.avg || 0;
+  const latencyScore = Math.max(0, Math.min(100, 100 - (latency - 10) * (100 / 90)));
+  
+  const matchRate = summary?.rewriteRate || 0;
+  
+  const rewrittenScores = qualityScores?.rewritten || {};
+  const avgQuality = (
+    (rewrittenScores.relevance || 0) + 
+    (rewrittenScores.groundedness || 0) + 
+    (rewrittenScores.completeness || 0)
+  ) / 3;
+  const qualityScore = (avgQuality / 5) * 100;
+  
+  const overall = (latencyScore * 0.4) + (matchRate * 0.3) + (qualityScore * 0.3);
+  
+  return {
+    overall: Math.round(overall),
+    breakdown: {
+      latency: `${latency.toFixed(1)}ms`,
+      matchRate: `${matchRate.toFixed(1)}%`,
+      quality: avgQuality.toFixed(1)
+    }
+  };
+};
+
+const calculateUserAdoptionScore = (adoptionData, feedbackData) => {
+  const stickiness = adoptionData?.stickiness || 0;
+  const stickinessScore = Math.min(100, (stickiness / 50) * 100);
+  
+  const positiveRate = feedbackData?.summary?.positiveRate || 0;
+  
+  const wau = adoptionData?.wau || 0;
+  const wauScore = Math.min(100, (wau / 150) * 100);
+  
+  const overall = (stickinessScore * 0.4) + (positiveRate * 0.3) + (wauScore * 0.3);
+  
+  return {
+    overall: Math.round(overall),
+    breakdown: {
+      wau: adoptionData?.wau || 0,
+      stickiness: `${stickiness.toFixed(1)}%`,
+      positiveRate: `${positiveRate.toFixed(1)}%`
+    }
+  };
+};
+
+const calculateContentHealthScore = (rewriterData) => {
+  const zeroResultRate = rewriterData?.summary?.zeroResultRate || 0;
+  const overall = Math.round(100 - zeroResultRate);
+  
+  return {
+    overall,
+    breakdown: {
+      zeroResultRate: `${zeroResultRate.toFixed(1)}%`,
+      totalQueries: rewriterData?.summary?.totalQueries || 0
+    }
+  };
+};
+
+// =============================================================================
+// OBSERVABILITY COMPONENTS
+// =============================================================================
+
+const ScoreRing = ({ score, size = 90, strokeWidth = 7, color }) => {
+  const radius = (size - strokeWidth) / 2;
+  const circumference = radius * 2 * Math.PI;
+  const offset = circumference - (score / 100) * circumference;
+  
+  return (
+    <div className="relative" style={{ width: size, height: size }}>
+      <svg width={size} height={size} className="transform -rotate-90">
+        <circle
+          cx={size / 2}
+          cy={size / 2}
+          r={radius}
+          fill="none"
+          stroke="rgba(255,255,255,0.1)"
+          strokeWidth={strokeWidth}
+        />
+        <circle
+          cx={size / 2}
+          cy={size / 2}
+          r={radius}
+          fill="none"
+          stroke={color}
+          strokeWidth={strokeWidth}
+          strokeDasharray={circumference}
+          strokeDashoffset={offset}
+          strokeLinecap="round"
+          style={{ transition: 'stroke-dashoffset 1s ease-out' }}
+        />
+      </svg>
+      <div className="absolute inset-0 flex items-center justify-center">
+        <span className="text-xl font-bold" style={{ color: COLORS.textPrimary }}>
+          {score}%
+        </span>
+      </div>
+    </div>
+  );
+};
+
+const ObservabilityCard = ({ title, score, icon: Icon, color, breakdown, linkTo, delay = 0 }) => {
+  const navigate = useNavigate();
+  
+  const getStatus = (score) => {
+    if (score >= 70) return { label: 'Healthy', color: COLORS.green };
+    if (score >= 50) return { label: 'Needs Attention', color: '#EAB308' };
+    return { label: 'Action Required', color: COLORS.red };
+  };
+  
+  const status = getStatus(score);
+  
+  return (
+    <Card delay={delay}>
+      <div className="flex flex-col h-full">
+        <div className="flex items-center gap-2 mb-3">
+          <div className="p-2 rounded-lg" style={{ background: `${color}20` }}>
+            <Icon size={18} style={{ color }} />
+          </div>
+          <div>
+            <h3 className="font-semibold text-sm" style={{ color: COLORS.textPrimary }}>{title}</h3>
+            <p className="text-xs" style={{ color: status.color }}>{status.label}</p>
+          </div>
+        </div>
+        
+        <div className="flex justify-center mb-3">
+          <ScoreRing score={score} color={color} />
+        </div>
+        
+        <div className="space-y-1 mb-3 flex-1">
+          {Object.entries(breakdown).map(([key, value]) => (
+            <div key={key} className="flex justify-between items-center">
+              <span className="text-xs capitalize" style={{ color: COLORS.textMuted }}>
+                {key.replace(/([A-Z])/g, ' $1').trim()}
+              </span>
+              <span className="text-xs font-medium" style={{ color: COLORS.textPrimary }}>{value}</span>
+            </div>
+          ))}
+        </div>
+        
+        <button
+          onClick={() => navigate(linkTo)}
+          className="flex items-center justify-center gap-1 w-full py-2 rounded-lg transition-all hover:opacity-80"
+          style={{ background: `${color}15`, color: color }}
+        >
+          <span className="text-xs font-medium">View Details</span>
+          <ChevronRight size={14} />
+        </button>
+      </div>
+    </Card>
+  );
+};
+
+// =============================================================================
+// MAIN COMPONENT
+// =============================================================================
+
 const Overview = () => {
   const { summary } = rewriterData;
+  
+  // Calculate observability scores
+  const queryPerformance = useMemo(() => calculateQueryPerformanceScore(rewriterData), []);
+  const userAdoption = useMemo(() => calculateUserAdoptionScore(adoptionData, feedbackData), []);
+  const contentHealth = useMemo(() => calculateContentHealthScore(rewriterData), []);
+  
+  // Overall system health
+  const overallHealth = useMemo(() => {
+    const avgScore = (queryPerformance.overall + userAdoption.overall + contentHealth.overall) / 3;
+    if (avgScore >= 70) return { label: 'All Systems Healthy', icon: CheckCircle, color: COLORS.green };
+    if (avgScore >= 50) return { label: 'Needs Attention', icon: AlertCircle, color: '#EAB308' };
+    return { label: 'Action Required', icon: AlertCircle, color: COLORS.red };
+  }, [queryPerformance, userAdoption, contentHealth]);
   
   return (
     <div className="space-y-8">
@@ -32,9 +214,225 @@ const Overview = () => {
         }
       />
 
+      {/* ================================================================== */}
+      {/* OBSERVABILITY SECTION */}
+      {/* ================================================================== */}
+      
+      {/* System Health Banner */}
+      <Card delay={50}>
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="p-3 rounded-xl" style={{ background: `${overallHealth.color}20` }}>
+              <overallHealth.icon size={24} style={{ color: overallHealth.color }} />
+            </div>
+            <div>
+              <p className="text-sm" style={{ color: COLORS.textMuted }}>System Status</p>
+              <p className="text-xl font-bold" style={{ color: overallHealth.color }}>
+                {overallHealth.label}
+              </p>
+            </div>
+          </div>
+          
+          <div className="flex items-center gap-6">
+            <div className="text-center">
+              <p className="text-xl font-bold" style={{ color: COLORS.purple }}>{queryPerformance.overall}%</p>
+              <p className="text-xs" style={{ color: COLORS.textMuted }}>Performance</p>
+            </div>
+            <div className="text-center">
+              <p className="text-xl font-bold" style={{ color: COLORS.cyan }}>{userAdoption.overall}%</p>
+              <p className="text-xs" style={{ color: COLORS.textMuted }}>Adoption</p>
+            </div>
+            <div className="text-center">
+              <p className="text-xl font-bold" style={{ color: COLORS.green }}>{contentHealth.overall}%</p>
+              <p className="text-xs" style={{ color: COLORS.textMuted }}>Content</p>
+            </div>
+          </div>
+        </div>
+      </Card>
+
+      {/* Three Observability Score Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <ObservabilityCard
+          title="Query Performance"
+          score={queryPerformance.overall}
+          icon={Sparkles}
+          color={COLORS.purple}
+          breakdown={queryPerformance.breakdown}
+          linkTo="/query-rewriter"
+          delay={100}
+        />
+        
+        <ObservabilityCard
+          title="User Adoption"
+          score={userAdoption.overall}
+          icon={Users}
+          color={COLORS.cyan}
+          breakdown={userAdoption.breakdown}
+          linkTo="/adoption"
+          delay={150}
+        />
+        
+        <ObservabilityCard
+          title="Content Health"
+          score={contentHealth.overall}
+          icon={FileSearch}
+          color={COLORS.green}
+          breakdown={contentHealth.breakdown}
+          linkTo="/content-health"
+          delay={200}
+        />
+      </div>
+
+      {/* ================================================================== */}
+      {/* ANSWER QUALITY SCORES */}
+      {/* ================================================================== */}
+      
+      <Card delay={250}>
+        <div className="flex items-center gap-2 mb-4">
+          <Target size={20} style={{ color: COLORS.orange }} />
+          <h3 className="font-semibold" style={{ color: COLORS.textPrimary }}>Answer Quality Scores</h3>
+          <span className="text-xs px-2 py-0.5 rounded-full" style={{ background: 'rgba(255,255,255,0.1)', color: COLORS.textMuted }}>
+            LLM-as-Judge
+          </span>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Relevance */}
+          <div>
+            <div className="flex justify-between items-center mb-2">
+              <span className="text-sm font-medium" style={{ color: COLORS.textPrimary }}>Relevance</span>
+              <span className="text-xs" style={{ color: COLORS.textMuted }}>/ 5.0</span>
+            </div>
+            <div className="space-y-2">
+              <div className="flex items-center gap-2">
+                <span className="text-xs w-20" style={{ color: COLORS.textMuted }}>Rewritten</span>
+                <div className="flex-1 h-2 rounded-full" style={{ background: 'rgba(255,255,255,0.1)' }}>
+                  <div 
+                    className="h-full rounded-full" 
+                    style={{ 
+                      width: `${((rewriterData.qualityScores?.rewritten?.relevance || 0) / 5) * 100}%`,
+                      background: COLORS.purple 
+                    }} 
+                  />
+                </div>
+                <span className="text-sm font-bold w-8" style={{ color: COLORS.purple }}>
+                  {rewriterData.qualityScores?.rewritten?.relevance?.toFixed(1) || '0.0'}
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-xs w-20" style={{ color: COLORS.textMuted }}>Passthrough</span>
+                <div className="flex-1 h-2 rounded-full" style={{ background: 'rgba(255,255,255,0.1)' }}>
+                  <div 
+                    className="h-full rounded-full" 
+                    style={{ 
+                      width: `${((rewriterData.qualityScores?.passthrough?.relevance || 0) / 5) * 100}%`,
+                      background: COLORS.orange 
+                    }} 
+                  />
+                </div>
+                <span className="text-sm font-bold w-8" style={{ color: COLORS.orange }}>
+                  {rewriterData.qualityScores?.passthrough?.relevance?.toFixed(1) || '0.0'}
+                </span>
+              </div>
+            </div>
+          </div>
+          
+          {/* Groundedness */}
+          <div>
+            <div className="flex justify-between items-center mb-2">
+              <span className="text-sm font-medium" style={{ color: COLORS.textPrimary }}>Groundedness</span>
+              <span className="text-xs" style={{ color: COLORS.textMuted }}>/ 5.0</span>
+            </div>
+            <div className="space-y-2">
+              <div className="flex items-center gap-2">
+                <span className="text-xs w-20" style={{ color: COLORS.textMuted }}>Rewritten</span>
+                <div className="flex-1 h-2 rounded-full" style={{ background: 'rgba(255,255,255,0.1)' }}>
+                  <div 
+                    className="h-full rounded-full" 
+                    style={{ 
+                      width: `${((rewriterData.qualityScores?.rewritten?.groundedness || 0) / 5) * 100}%`,
+                      background: COLORS.purple 
+                    }} 
+                  />
+                </div>
+                <span className="text-sm font-bold w-8" style={{ color: COLORS.purple }}>
+                  {rewriterData.qualityScores?.rewritten?.groundedness?.toFixed(1) || '0.0'}
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-xs w-20" style={{ color: COLORS.textMuted }}>Passthrough</span>
+                <div className="flex-1 h-2 rounded-full" style={{ background: 'rgba(255,255,255,0.1)' }}>
+                  <div 
+                    className="h-full rounded-full" 
+                    style={{ 
+                      width: `${((rewriterData.qualityScores?.passthrough?.groundedness || 0) / 5) * 100}%`,
+                      background: COLORS.orange 
+                    }} 
+                  />
+                </div>
+                <span className="text-sm font-bold w-8" style={{ color: COLORS.orange }}>
+                  {rewriterData.qualityScores?.passthrough?.groundedness?.toFixed(1) || '0.0'}
+                </span>
+              </div>
+            </div>
+          </div>
+          
+          {/* Completeness */}
+          <div>
+            <div className="flex justify-between items-center mb-2">
+              <span className="text-sm font-medium" style={{ color: COLORS.textPrimary }}>Completeness</span>
+              <span className="text-xs" style={{ color: COLORS.textMuted }}>/ 5.0</span>
+            </div>
+            <div className="space-y-2">
+              <div className="flex items-center gap-2">
+                <span className="text-xs w-20" style={{ color: COLORS.textMuted }}>Rewritten</span>
+                <div className="flex-1 h-2 rounded-full" style={{ background: 'rgba(255,255,255,0.1)' }}>
+                  <div 
+                    className="h-full rounded-full" 
+                    style={{ 
+                      width: `${((rewriterData.qualityScores?.rewritten?.completeness || 0) / 5) * 100}%`,
+                      background: COLORS.purple 
+                    }} 
+                  />
+                </div>
+                <span className="text-sm font-bold w-8" style={{ color: COLORS.purple }}>
+                  {rewriterData.qualityScores?.rewritten?.completeness?.toFixed(1) || '0.0'}
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-xs w-20" style={{ color: COLORS.textMuted }}>Passthrough</span>
+                <div className="flex-1 h-2 rounded-full" style={{ background: 'rgba(255,255,255,0.1)' }}>
+                  <div 
+                    className="h-full rounded-full" 
+                    style={{ 
+                      width: `${((rewriterData.qualityScores?.passthrough?.completeness || 0) / 5) * 100}%`,
+                      background: COLORS.orange 
+                    }} 
+                  />
+                </div>
+                <span className="text-sm font-bold w-8" style={{ color: COLORS.orange }}>
+                  {rewriterData.qualityScores?.passthrough?.completeness?.toFixed(1) || '0.0'}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Card>
+
+      {/* ================================================================== */}
+      {/* EXISTING CONTENT */}
+      {/* ================================================================== */}
+
+      {/* Section Divider */}
+      <div className="flex items-center gap-4">
+        <div className="h-px flex-1" style={{ background: 'rgba(255,255,255,0.1)' }} />
+        <span className="text-sm font-medium" style={{ color: COLORS.textMuted }}>Detailed Metrics</span>
+        <div className="h-px flex-1" style={{ background: 'rgba(255,255,255,0.1)' }} />
+      </div>
+
       {/* Quick Stats Row */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <Card delay={100}>
+        <Card delay={250}>
           <div className="text-center">
             <p className="text-sm" style={{ color: COLORS.textMuted }}>Total Queries</p>
             <p className="text-3xl font-bold mt-1" style={{ color: COLORS.textPrimary }}>
@@ -44,7 +442,7 @@ const Overview = () => {
           </div>
         </Card>
         
-        <Card delay={150}>
+        <Card delay={300}>
           <div className="text-center">
             <p className="text-sm" style={{ color: COLORS.textMuted }}>Active Users</p>
             <p className="text-3xl font-bold mt-1" style={{ color: COLORS.cyan }}>
@@ -54,7 +452,7 @@ const Overview = () => {
           </div>
         </Card>
         
-        <Card delay={200}>
+        <Card delay={350}>
           <div className="text-center">
             <p className="text-sm" style={{ color: COLORS.textMuted }}>Feedback</p>
             <p className="text-3xl font-bold mt-1" style={{ color: COLORS.green }}>
@@ -64,7 +462,7 @@ const Overview = () => {
           </div>
         </Card>
         
-        <Card delay={250}>
+        <Card delay={400}>
           <div className="text-center">
             <p className="text-sm" style={{ color: COLORS.textMuted }}>Rewrite Rate</p>
             <p className="text-3xl font-bold mt-1" style={{ color: COLORS.purple }}>
@@ -79,7 +477,7 @@ const Overview = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         
         {/* Query Rewriter Section */}
-        <Card delay={300}>
+        <Card delay={450}>
           <div className="flex items-center gap-2 mb-4">
             <Sparkles size={20} style={{ color: COLORS.purple }} />
             <h3 className="font-semibold" style={{ color: COLORS.textPrimary }}>Query Rewriter</h3>
@@ -108,7 +506,7 @@ const Overview = () => {
         </Card>
 
         {/* Adoption Section */}
-        <Card delay={400}>
+        <Card delay={500}>
           <div className="flex items-center gap-2 mb-4">
             <Users size={20} style={{ color: COLORS.cyan }} />
             <h3 className="font-semibold" style={{ color: COLORS.textPrimary }}>Adoption</h3>
@@ -137,7 +535,7 @@ const Overview = () => {
         </Card>
 
         {/* Feedback Section */}
-        <Card delay={500}>
+        <Card delay={550}>
           <div className="flex items-center gap-2 mb-4">
             <ThumbsUp size={20} style={{ color: COLORS.green }} />
             <h3 className="font-semibold" style={{ color: COLORS.textPrimary }}>Feedback</h3>
@@ -171,7 +569,7 @@ const Overview = () => {
         <h3 className="font-semibold mb-4" style={{ color: COLORS.textPrimary }}>Quick Navigation</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <a 
-            href="/rewriter"
+            href="/query-rewriter"
             className="p-4 rounded-lg text-center transition-all hover:scale-105"
             style={{ background: 'rgba(124, 58, 237, 0.1)' }}
           >

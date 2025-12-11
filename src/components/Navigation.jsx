@@ -12,9 +12,9 @@ import { COLORS } from '../App';
 
 const navItems = [
   { path: '/', label: 'Overview', icon: LayoutDashboard },
-  { path: '/rewriter', label: 'Query Rewriter', icon: Sparkles },
   { path: '/adoption', label: 'Adoption', icon: Users },
   { path: '/feedback', label: 'Feedback', icon: MessageSquare },
+  { path: '/query-rewriter', label: 'Query Rewriter', icon: Sparkles },
   { path: '/content-health', label: 'Content Health', icon: Database },
 ];
 
@@ -41,10 +41,10 @@ const Navigation = () => {
             </div>
             <div>
               <h1 className="text-lg font-bold" style={{ color: COLORS.textPrimary }}>
-                Nexus Ontology Monitor
+                Nexus IQ
               </h1>
               <p className="text-xs" style={{ color: COLORS.textMuted }}>
-                Query Optimizer Analytics
+                Query Optimizer Observability
               </p>
             </div>
           </div>
